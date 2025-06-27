@@ -1,112 +1,61 @@
--- Control Structures Output --
+SLF4J Logging Exercise - Expected Console Output
+======================================================
 
-Senior Citizen Loan Discount Processing
-Started: 15-DEC-2024 14:30:25
-Customer: John Smith (Age: 65)
-Loan ID: 201 Rate: 5.5% -> 4.5%
-Customer: Bob Johnson (Age: 70)
-Loan ID: 202 Rate: 6.0% -> 5.0%
-Total processed: 2
-Completed: 15-DEC-2024 14:30:26
+22:44:15.123 [main] INFO  com.example.LoggingExample - Starting SLF4J Logging Example Application
+22:44:15.125 [main] INFO  com.example.LoggingExample - === Demonstrating Different Logging Levels ===
+22:44:15.126 [main] ERROR com.example.LoggingExample - This is an error message - something went wrong!
+22:44:15.126 [main] WARN  com.example.LoggingExample - This is a warning message - be careful!
+22:44:15.127 [main] INFO  com.example.LoggingExample - This is an info message - general information
+22:44:15.127 [main] DEBUG com.example.LoggingExample - This is a debug message - detailed debugging info
+22:44:15.128 [main] TRACE com.example.LoggingExample - This is a trace message - very detailed tracing info
+22:44:15.128 [main] INFO  com.example.LoggingExample - === Simulating Application Workflow ===
+22:44:15.129 [main] INFO  com.example.LoggingExample - Initializing application components...
+22:44:15.129 [main] DEBUG com.example.LoggingExample - Processing user data...
+22:44:15.130 [main] WARN  com.example.LoggingExample - User session timeout is approaching
+22:44:15.130 [main] INFO  com.example.LoggingExample - Data processing completed successfully
+22:44:15.131 [main] DEBUG com.example.LoggingExample - Attempting risky operation...
+22:44:15.132 [main] ERROR com.example.LoggingExample - Mathematical error occurred: Division by zero
+java.lang.ArithmeticException: / by zero
+	at com.example.LoggingExample.simulateErrorCondition(LoggingExample.java:78)
+	at com.example.LoggingExample.simulateApplicationWorkflow(LoggingExample.java:62)
+	at com.example.LoggingExample.main(LoggingExample.java:19)
+22:44:15.133 [main] WARN  com.example.LoggingExample - Continuing execution with default values
+22:44:15.133 [main] INFO  com.example.LoggingExample - SLF4J Logging Example Application completed
 
-VIP Status Promotion Processing
-Started: 15-DEC-2024 14:30:27
-Promoted: Jane Doe (Balance: $25,000.00)
-Promoted: John Smith (Balance: $15,000.00)
-Total promoted: 2
-Completed: 15-DEC-2024 14:30:28
+======================================================
+Log File Output (logs/application.log)
+======================================================
 
-Loan Payment Reminder System
-Generated: 15-DEC-2024 14:30:29
-REMINDER (HIGH)
-Customer: John Smith
-Loan ID: 201 Amount: $50,000.00
-Due Date: 30-DEC-2024 (15 days)
+2025-06-25 22:44:15.123 [main] INFO  com.example.LoggingExample - Starting SLF4J Logging Example Application
+2025-06-25 22:44:15.125 [main] INFO  com.example.LoggingExample - === Demonstrating Different Logging Levels ===
+2025-06-25 22:44:15.126 [main] ERROR com.example.LoggingExample - This is an error message - something went wrong!
+2025-06-25 22:44:15.126 [main] WARN  com.example.LoggingExample - This is a warning message - be careful!
+2025-06-25 22:44:15.127 [main] INFO  com.example.LoggingExample - This is an info message - general information
+2025-06-25 22:44:15.127 [main] DEBUG com.example.LoggingExample - This is a debug message - detailed debugging info
+2025-06-25 22:44:15.128 [main] TRACE com.example.LoggingExample - This is a trace message - very detailed tracing info
+2025-06-25 22:44:15.128 [main] INFO  com.example.LoggingExample - === Simulating Application Workflow ===
+2025-06-25 22:44:15.129 [main] INFO  com.example.LoggingExample - Initializing application components...
+2025-06-25 22:44:15.129 [main] DEBUG com.example.LoggingExample - Processing user data...
+2025-06-25 22:44:15.130 [main] WARN  com.example.LoggingExample - User session timeout is approaching
+2025-06-25 22:44:15.130 [main] INFO  com.example.LoggingExample - Data processing completed successfully
+2025-06-25 22:44:15.131 [main] DEBUG com.example.LoggingExample - Attempting risky operation...
+2025-06-25 22:44:15.132 [main] ERROR com.example.LoggingExample - Mathematical error occurred: Division by zero
+java.lang.ArithmeticException: / by zero
+	at com.example.LoggingExample.simulateErrorCondition(LoggingExample.java:78)
+	at com.example.LoggingExample.simulateApplicationWorkflow(LoggingExample.java:62)
+	at com.example.LoggingExample.main(LoggingExample.java:19)
+2025-06-25 22:44:15.133 [main] WARN  com.example.LoggingExample - Continuing execution with default values
+2025-06-25 22:44:15.133 [main] INFO  com.example.LoggingExample - SLF4J Logging Example Application completed
 
-REMINDER (MEDIUM)
-Customer: Bob Johnson
-Loan ID: 203 Amount: $30,000.00
-Due Date: 10-JAN-2025 (26 days)
+======================================================
+Key Points Demonstrated:
+======================================================
 
-Total reminders sent: 2
+1. ERROR Level: Used for error events that might still allow the application to continue running
+2. WARN Level: Used for potentially harmful situations that aren't necessarily errors
+3. INFO Level: Used for informational messages that highlight the progress of the application
+4. DEBUG Level: Used for detailed information that is useful when diagnosing problems
+5. TRACE Level: Used for very detailed information, typically only of interest when diagnosing problems
 
-Bank Summary Report
-Generated: 15-DEC-2024 14:30:30
-Senior customers with loans: 2
-VIP customers: 2
-Loans due within 30 days: 2
-
--- Stored Procedures Output --
-
-SQL> EXEC ProcessMonthlyInterest;
-Monthly Interest Processing
-Started: 15-DEC-2024 14:35:10
-Account 101: $5,000.00 -> $5,050.00
-Account 102: $10,000.00 -> $10,100.00
-Account 104: $3,500.00 -> $3,535.00
-Accounts processed: 3
-Total interest: $185.00
-
-SQL> EXEC UpdateEmployeeBonus('IT', 5.0);
-Employee Bonus Update
-Department: IT Bonus: 5%
-Alice Brown: $75,000.00 -> $78,750.00
-Diana Wilson: $80,000.00 -> $84,000.00
-Employees updated: 2
-Total bonus: $7,750.00
-
-SQL> EXEC UpdateEmployeeBonus('Sales', 3.5);
-Employee Bonus Update
-Department: SALES Bonus: 3.5%
-Charlie Davis: $65,000.00 -> $67,275.00
-Mike Johnson: $55,000.00 -> $56,925.00
-Employees updated: 2
-Total bonus: $4,200.00
-
-SQL> EXEC TransferFunds(101, 102, 500.00);
-Fund Transfer Processing
-From: 101 To: 102 Amount: $500.00
-Transfer successful. Transaction ID: 1001
-New balances - From: $4,550.00 To: $10,600.00
-
-SQL> EXEC TransferFunds(103, 104, 1000.00);
-ERROR: Insufficient funds
-
-SQL> EXEC CheckAccountBalance(101);
-Account Balance Inquiry
-Account: 101 Customer: John Smith
-Type: SAVINGS Balance: $4,550.00
-
-SQL> EXEC CheckAccountBalance(999);
-Account not found: 999
-
-SQL> EXEC GetTransactionHistory(101, 30);
-Transaction History - Account: 101
-1. ID: 1001 Date: 15-DEC-24
-   Type: TRANSFER Amount: $500.00
-   Direction: OUT to 102
-2. ID: 1000 Date: 15-DEC-24
-   Type: DEPOSIT Amount: $50.00
-   Direction: IN from 
-3. ID: 999 Date: 14-DEC-24
-   Type: DEPOSIT Amount: $100.00
-   Direction: IN from 
-Total transactions: 3
-
-SQL> EXEC GetTransactionHistory(105, 30);
-Transaction History - Account: 105
-No transactions found
-
--- Error Handling Examples --
-
-SQL> EXEC UpdateEmployeeBonus('HR', -5);
-ERROR: Bonus percentage must be positive
-
-SQL> EXEC UpdateEmployeeBonus(NULL, 5);
-ERROR: Department cannot be null
-
-SQL> EXEC TransferFunds(101, 101, 100);
-ERROR: Cannot transfer to same account
-
-SQL> EXEC TransferFunds(999, 101, 100);
-ERROR: Source account not found 
+The application shows both console output (with time format HH:mm:ss.SSS) and file output 
+(with full timestamp yyyy-MM-dd HH:mm:ss.SSS) as configured in logback.xml. 
